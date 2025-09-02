@@ -68,8 +68,7 @@
 .featured-collection .card__content,
 .collection .card__content {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 0 0 18px 18px;
 }
 
@@ -94,32 +93,32 @@
 /* Style des badges et étiquettes */
 .featured-collection .card__badge,
 .collection .card__badge {
-  background: #433F68 !important;
-  color: white !important;
-  border-radius: 12px !important;
-  padding: 0.5rem 1rem !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(67, 63, 104, 0.3) !important;
+    background: #433F68 !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(67, 63, 104, 0.3) !important;
 }
 
 /* Style des boutons d'action rapide */
 .featured-collection .quick-add__submit,
 .collection .quick-add__submit {
-  background: #433F68 !important;
-  border: none !important;
-  border-radius: 12px !important;
-  color: white !important;
-  font-weight: 600 !important;
-  padding: 0.75rem 1.5rem !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 12px rgba(67, 63, 104, 0.3) !important;
+    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: #433F68 !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(67, 63, 104, 0.3) !important;
 }
 
 .featured-collection .quick-add__submit:hover,
 .collection .quick-add__submit:hover {
-  background: #5a5478 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(67, 63, 104, 0.4) !important;
+    background: linear-gradient(135deg, #5a5478 0%, #f8f9ff 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(67, 63, 104, 0.4) !important;
 }
 
 /* Animation d'entrée pour les cartes */
@@ -228,8 +227,7 @@
 /* Amélioration de l'accessibilité */
 .featured-collection .card:focus-within,
 .collection .card:focus-within {
-  outline: 3px solid #433F68;
-  outline-offset: 2px;
+  outline: none;
 }
 
 /* Support des préférences de mouvement réduit */
