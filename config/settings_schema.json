@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Dawn",
-    "theme_version": "15.4.0",
+    "theme_version": "12.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -102,116 +102,6 @@
     ]
   },
   {
-    "name": "Identité visuelle personnalisée",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Palette de couleurs gris & violet"
-      },
-      {
-        "type": "color",
-        "id": "bg",
-        "label": "Couleur de fond principale",
-        "default": "#0f0f12",
-        "info": "Couleur de fond principale du site (gris très foncé)"
-      },
-      {
-        "type": "color",
-        "id": "surface",
-        "label": "Surface principale",
-        "default": "#17171b",
-        "info": "Couleur des cartes et surfaces principales (gris foncé)"
-      },
-      {
-        "type": "color",
-        "id": "surface_2",
-        "label": "Surface secondaire",
-        "default": "#1f2025",
-        "info": "Couleur des surfaces secondaires et arrière-plans (gris moyen)"
-      },
-      {
-        "type": "header",
-        "content": "Couleurs d'accent (violet)"
-      },
-      {
-        "type": "color",
-        "id": "violet_start",
-        "label": "Dégradé - couleur de départ",
-        "default": "#7c3aed",
-        "info": "Couleur de départ du dégradé violet pour les boutons"
-      },
-      {
-        "type": "color",
-        "id": "violet_end",
-        "label": "Dégradé - couleur de fin",
-        "default": "#a78bfa",
-        "info": "Couleur de fin du dégradé violet pour les boutons"
-      },
-      {
-        "type": "header",
-        "content": "Accessibilité"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_auto_contrast",
-        "label": "Calcul automatique du contraste",
-        "default": true,
-        "info": "Ajuste automatiquement les couleurs de texte pour maintenir un bon contraste"
-      }
-    ]
-  },
-  {
-    "name": "Fond ruban animé",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Configuration du fond ruban"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_ribbon",
-        "label": "Activer le fond ruban animé",
-        "default": true,
-        "info": "Affiche un fond ruban animé style écran de veille Windows"
-      },
-      {
-        "type": "range",
-        "id": "ribbon_opacity",
-        "min": 0.005,
-        "max": 0.1,
-        "step": 0.005,
-        "label": "Opacité du ruban",
-        "default": 0.03,
-        "info": "Contrôle la visibilité du ruban (0.005 = très subtil, 0.1 = visible)"
-      },
-      {
-        "type": "range",
-        "id": "ribbon_blur",
-        "min": 20,
-        "max": 100,
-        "step": 10,
-        "label": "Flou du ruban",
-        "unit": "px",
-        "default": 40,
-        "info": "Contrôle le niveau de flou des rubans"
-      },
-      {
-        "type": "checkbox",
-        "id": "ribbon_mouse_follow",
-        "label": "Ruban suit la souris",
-        "default": true,
-        "info": "Le ruban réagit aux mouvements de la souris"
-      },
-      {
-        "type": "checkbox",
-        "id": "ribbon_scroll_parallax",
-        "label": "Effet parallaxe au scroll",
-        "default": true,
-        "info": "Le ruban bouge légèrement lors du défilement"
-      }
-    ]
-  },
-  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
@@ -222,7 +112,8 @@
         "type": "font_picker",
         "id": "type_header_font",
         "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label"
+        "label": "t:settings_schema.typography.settings.type_header_font.label",
+        "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
       {
         "type": "range",
@@ -242,7 +133,8 @@
         "type": "font_picker",
         "id": "type_body_font",
         "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label"
+        "label": "t:settings_schema.typography.settings.type_body_font.label",
+        "info": "t:settings_schema.typography.settings.type_body_font.info"
       },
       {
         "type": "range",
@@ -647,7 +539,7 @@
         "type": "color_scheme",
         "id": "card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -782,7 +674,7 @@
         "type": "color_scheme",
         "id": "collection_card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -917,7 +809,7 @@
         "type": "color_scheme",
         "id": "blog_card_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-2"
+        "default": "background-2"
       },
       {
         "type": "header",
@@ -1366,13 +1258,13 @@
         "type": "color_scheme",
         "id": "sale_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label",
-        "default": "scheme-5"
+        "default": "accent-2"
       },
       {
         "type": "color_scheme",
         "id": "sold_out_badge_color_scheme",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label",
-        "default": "scheme-3"
+        "default": "inverse"
       }
     ]
   },
@@ -1413,6 +1305,10 @@
   {
     "name": "t:settings_schema.social-media.name",
     "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
+      },
       {
         "type": "text",
         "id": "social_facebook_link",
@@ -1473,6 +1369,10 @@
     "name": "t:settings_schema.search_input.name",
     "settings": [
       {
+        "type": "header",
+        "content": "t:settings_schema.search_input.settings.header.content"
+      },
+      {
         "type": "checkbox",
         "id": "predictive_search_enabled",
         "default": true,
@@ -1497,6 +1397,10 @@
   {
     "name": "t:settings_schema.currency_format.name",
     "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.currency_format.settings.content"
+      },
       {
         "type": "paragraph",
         "content": "t:settings_schema.currency_format.settings.paragraph"
@@ -1558,7 +1462,7 @@
         "type": "color_scheme",
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
-        "default": "scheme-1"
+        "default": "background-1"
       }
     ]
   }
