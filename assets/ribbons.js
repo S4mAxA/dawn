@@ -1,8 +1,19 @@
 (() => {
+  console.log('🎨 Ribbons.js chargé - Démarrage de l\'animation...');
+  
   const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (mql.matches) return;
+  if (mql.matches) {
+    console.log('⚠️ prefers-reduced-motion activé - Animation désactivée');
+    return;
+  }
+  
   const c = document.getElementById('bg-ribbons');
-  if (!c) return;
+  if (!c) {
+    console.error('❌ Canvas #bg-ribbons non trouvé !');
+    return;
+  }
+  
+  console.log('✅ Canvas trouvé, initialisation du contexte 2D...');
   const ctx = c.getContext('2d', { alpha: true });
 
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -56,5 +67,6 @@
     });
     requestAnimationFrame(frame);
   }
+  console.log('🚀 Animation des rubans démarrée !');
   requestAnimationFrame(frame);
 })();

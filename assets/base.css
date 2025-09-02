@@ -3517,7 +3517,7 @@ details-disclosure>details {
 
 /* ===== STYLES PERSONNALISÉS POUR LES BOUTONS SHOPIFY ===== */
 
-/* TOUS LES BOUTONS SHOPIFY - 40px border-radius */
+/* TOUS LES BOUTONS SHOPIFY - 40px border-radius - RÈGLES RENFORCÉES */
 button,
 .button,
 .btn,
@@ -3547,12 +3547,22 @@ input[type="reset"],
 .card__media button,
 .slideshow__controls button,
 .slider-mobile-gutter button,
-.collection-hero__button {
+.collection-hero__button,
+/* Sélecteurs supplémentaires pour couvrir tous les cas */
+[class*="button"],
+[class*="btn"],
+[class*="submit"],
+[class*="cart"],
+[class*="search"],
+[class*="close"],
+[class*="toggle"] {
   border-radius: 40px !important;
   -webkit-tap-highlight-color: transparent;
+  -webkit-border-radius: 40px !important;
+  -moz-border-radius: 40px !important;
 }
 
-/* Retire l'outline carré et ajoute un halo arrondi accessible pour TOUS les boutons */
+/* Retire l'outline carré et ajoute un halo arrondi accessible pour TOUS les boutons - RÈGLES RENFORCÉES */
 button:focus,
 .button:focus,
 .btn:focus,
@@ -3612,8 +3622,25 @@ input[type="reset"]:focus-visible,
 .card__media button:focus-visible,
 .slideshow__controls button:focus-visible,
 .slider-mobile-gutter button:focus-visible,
-.collection-hero__button:focus-visible {
+.collection-hero__button:focus-visible,
+/* Sélecteurs supplémentaires pour couvrir tous les cas */
+[class*="button"]:focus,
+[class*="btn"]:focus,
+[class*="submit"]:focus,
+[class*="cart"]:focus,
+[class*="search"]:focus,
+[class*="close"]:focus,
+[class*="toggle"]:focus,
+[class*="button"]:focus-visible,
+[class*="btn"]:focus-visible,
+[class*="submit"]:focus-visible,
+[class*="cart"]:focus-visible,
+[class*="search"]:focus-visible,
+[class*="close"]:focus-visible,
+[class*="toggle"]:focus-visible {
   outline: none !important;
   box-shadow: 0 0 0 3px rgba(80, 70, 160, .35) !important;
   border-radius: 40px !important;
+  -webkit-border-radius: 40px !important;
+  -moz-border-radius: 40px !important;
 }

@@ -1,0 +1,138 @@
+/* ===== FORÇAGE DU BORDER-RADIUS 40px SUR TOUS LES BOUTONS ===== */
+
+/* Règle globale pour TOUS les boutons */
+*[class*="button"],
+*[class*="btn"],
+*[class*="submit"],
+*[class*="cart"],
+*[class*="search"],
+*[class*="close"],
+*[class*="toggle"],
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.button,
+.btn,
+.product-form__submit,
+.quick-add__submit,
+.cart__submit,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded,
+.customer button,
+.pagination__item,
+.facets__submit,
+.cart-notification__close,
+.header__search-form-submit,
+.predictive-search__submit,
+.newsletter__submit,
+.contact__submit,
+.localization-form__submit,
+.share-button,
+.cart-drawer__close,
+.modal__close-button,
+.search__button,
+.product__pickup-availabilities-button,
+.product__media-toggle,
+.card__media button,
+.slideshow__controls button,
+.slider-mobile-gutter button,
+.collection-hero__button {
+  border-radius: 40px !important;
+  -webkit-border-radius: 40px !important;
+  -moz-border-radius: 40px !important;
+  -ms-border-radius: 40px !important;
+  -o-border-radius: 40px !important;
+}
+
+/* Focus states */
+*[class*="button"]:focus,
+*[class*="btn"]:focus,
+*[class*="submit"]:focus,
+*[class*="cart"]:focus,
+*[class*="search"]:focus,
+*[class*="close"]:focus,
+*[class*="toggle"]:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+.button:focus,
+.btn:focus,
+.product-form__submit:focus,
+.quick-add__submit:focus,
+.cart__submit:focus,
+.shopify-payment-button__button:focus,
+.shopify-payment-button__button--unbranded:focus,
+.customer button:focus,
+.pagination__item:focus,
+.facets__submit:focus,
+.cart-notification__close:focus,
+.header__search-form-submit:focus,
+.predictive-search__submit:focus,
+.newsletter__submit:focus,
+.contact__submit:focus,
+.localization-form__submit:focus,
+.share-button:focus,
+.cart-drawer__close:focus,
+.modal__close-button:focus,
+.search__button:focus,
+.product__pickup-availabilities-button:focus,
+.product__media-toggle:focus,
+.card__media button:focus,
+.slideshow__controls button:focus,
+.slider-mobile-gutter button:focus,
+.collection-hero__button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(80, 70, 160, .35) !important;
+  border-radius: 40px !important;
+  -webkit-border-radius: 40px !important;
+  -moz-border-radius: 40px !important;
+  -ms-border-radius: 40px !important;
+  -o-border-radius: 40px !important;
+}
+
+/* Hover states */
+*[class*="button"]:hover,
+*[class*="btn"]:hover,
+*[class*="submit"]:hover,
+*[class*="cart"]:hover,
+*[class*="search"]:hover,
+*[class*="close"]:hover,
+*[class*="toggle"]:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+.button:hover,
+.btn:hover,
+.product-form__submit:hover,
+.quick-add__submit:hover,
+.cart__submit:hover,
+.shopify-payment-button__button:hover,
+.shopify-payment-button__button--unbranded:hover,
+.customer button:hover,
+.pagination__item:hover,
+.facets__submit:hover,
+.cart-notification__close:hover,
+.header__search-form-submit:hover,
+.predictive-search__submit:hover,
+.newsletter__submit:hover,
+.contact__submit:hover,
+.localization-form__submit:hover,
+.share-button:hover,
+.cart-drawer__close:hover,
+.modal__close-button:hover,
+.search__button:hover,
+.product__pickup-availabilities-button:hover,
+.product__media-toggle:hover,
+.card__media button:hover,
+.slideshow__controls button:hover,
+.slider-mobile-gutter button:hover,
+.collection-hero__button:hover {
+  border-radius: 40px !important;
+  -webkit-border-radius: 40px !important;
+  -moz-border-radius: 40px !important;
+  -ms-border-radius: 40px !important;
+  -o-border-radius: 40px !important;
+}
