@@ -62,20 +62,26 @@
 /* Style des titres de produits */
 .featured-collection .card__heading,
 .collection .card__heading {
-    color: #ffffff !important;
+    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     font-weight: 700;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
 }
 
 /* Style des prix */
 .featured-collection .price,
 .collection .price {
-    color: #ffffff !important;
+    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     font-weight: 700;
     font-size: 1.3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: none;
 }
 
 /* Style des badges et étiquettes */
