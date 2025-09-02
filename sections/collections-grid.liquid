@@ -1,0 +1,211 @@
+{% comment %}
+  Section pour afficher une grille de collections avec des cartes transparentes
+  
+  Paramètres disponibles dans l'éditeur de thème :
+  - title: titre de la section
+  - subtitle: sous-titre de la section
+  - collections: sélection des collections à afficher
+  - layout: 'grid' ou 'hero' pour le style des cartes
+  - show_description: afficher les descriptions
+  - show_product_count: afficher le nombre de produits
+  - show_badge: afficher les badges "Nouveau"
+  - columns_desktop: nombre de colonnes sur desktop
+  - columns_mobile: nombre de colonnes sur mobile
+{% endcomment %}
+
+{%- liquid
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign collections = section.settings.collections
+  assign layout = section.settings.layout | default: 'grid'
+  assign show_description = section.settings.show_description
+  assign show_product_count = section.settings.show_product_count
+  assign show_badge = section.settings.show_badge
+  assign columns_desktop = section.settings.columns_desktop | default: 3
+  assign columns_mobile = section.settings.columns_mobile | default: 1
+  
+  if collections == blank
+    assign collections = collections
+  endif
+-%}
+
+<section class="section-collections-grid section-{{ section.id }}-padding">
+  <div class="page-width">
+    {% if title != blank or subtitle != blank %}
+      <div class="section-header text-center mb-4">
+        {% if title != blank %}
+          <h2 class="section-header__title h2">{{ title }}</h2>
+        {% endif %}
+        
+        {% if subtitle != blank %}
+          <div class="section-header__subtitle">
+            <p>{{ subtitle }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    {% if collections != blank %}
+      <div class="collections-grid" style="
+        grid-template-columns: repeat({{ columns_desktop }}, 1fr);
+      ">
+        {% for collection in collections %}
+          {% render 'collection-card',
+            collection: collection,
+            show_description: show_description,
+            show_product_count: show_product_count,
+            variant: layout,
+            show_badge: show_badge
+          %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="collections-grid" style="
+        grid-template-columns: repeat({{ columns_desktop }}, 1fr);
+      ">
+        {% for collection in collections limit: 6 %}
+          {% render 'collection-card',
+            collection: collection,
+            show_description: show_description,
+            show_product_count: show_product_count,
+            variant: layout,
+            show_badge: show_badge
+          %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round }}px;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .collections-grid {
+      grid-template-columns: repeat({{ columns_mobile }}, 1fr) !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Grille de collections",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre de la section",
+      "default": "Nos collections"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre de la section",
+      "default": "Découvrez nos collections soigneusement sélectionnées"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Collections à afficher",
+      "info": "Laissez vide pour afficher toutes les collections"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Style des cartes",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grille standard"
+        },
+        {
+          "value": "hero",
+          "label": "Style héro avec image en arrière-plan"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Afficher les descriptions",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_count",
+      "label": "Afficher le nombre de produits",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Afficher les badges \"Nouveau\"",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Colonnes sur desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Colonnes sur mobile",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Espacement"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacement supérieur",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacement inférieur",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grille de collections",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}

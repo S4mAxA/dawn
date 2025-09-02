@@ -1,0 +1,24 @@
+<style>
+:root {
+  /* Variables de couleur personnalisables via l'éditeur de thème */
+  {% if settings.bg %}
+    --bg: {{ settings.bg }};
+  {% endif %}
+  
+  {% if settings.surface %}
+    --surface: {{ settings.surface }};
+  {% endif %}
+  
+  {% if settings.surface_2 %}
+    --surface-2: {{ settings.surface_2 }};
+  {% endif %}
+  
+  {% if settings.violet_start and settings.violet_end %}
+    --grad-accent: linear-gradient(135deg, {{ settings.violet_start }}, {{ settings.violet_end }});
+    --grad-accent-hover: linear-gradient(135deg, 
+      color-mix(in oklab, {{ settings.violet_start }} 90%, black), 
+      {{ settings.violet_end }}
+    );
+  {% endif %}
+}
+</style>

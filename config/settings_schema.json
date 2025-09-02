@@ -102,6 +102,65 @@
     ]
   },
   {
+    "name": "Identité visuelle personnalisée",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Palette de couleurs gris & violet"
+      },
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "Couleur de fond principale",
+        "default": "#0f0f12",
+        "info": "Couleur de fond principale du site (gris très foncé)"
+      },
+      {
+        "type": "color",
+        "id": "surface",
+        "label": "Surface principale",
+        "default": "#17171b",
+        "info": "Couleur des cartes et surfaces principales (gris foncé)"
+      },
+      {
+        "type": "color",
+        "id": "surface_2",
+        "label": "Surface secondaire",
+        "default": "#1f2025",
+        "info": "Couleur des surfaces secondaires et arrière-plans (gris moyen)"
+      },
+      {
+        "type": "header",
+        "content": "Couleurs d'accent (violet)"
+      },
+      {
+        "type": "color",
+        "id": "violet_start",
+        "label": "Dégradé - couleur de départ",
+        "default": "#7c3aed",
+        "info": "Couleur de départ du dégradé violet pour les boutons"
+      },
+      {
+        "type": "color",
+        "id": "violet_end",
+        "label": "Dégradé - couleur de fin",
+        "default": "#a78bfa",
+        "info": "Couleur de fin du dégradé violet pour les boutons"
+      },
+      {
+        "type": "header",
+        "content": "Accessibilité"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_auto_contrast",
+        "label": "Calcul automatique du contraste",
+        "default": true,
+        "info": "Ajuste automatiquement les couleurs de texte pour maintenir un bon contraste"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
