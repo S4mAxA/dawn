@@ -1,4 +1,18 @@
-/* ===== STYLES PERSONNALISÉS POUR LES CARTES "LAST ARRIVAL" ===== */
+/* ===== STYLES PERSONNALISÉS POUR LES CARTES "UNIQUE CLOTHES" ===== */
+
+/* Style du titre principal UNIQUE CLOTHES */
+.featured-collection .collection__title .title,
+.collection .collection__title .title {
+    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 800 !important;
+    font-size: 2.5rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-shadow: none !important;
+}
 
 /* Sélecteurs spécifiques pour les cartes de la section featured-collection */
 .featured-collection .card,
