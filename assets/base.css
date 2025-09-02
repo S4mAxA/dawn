@@ -3511,7 +3511,27 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
-  
 
+/* ===== STYLES PERSONNALISÉS POUR LES BOUTONS SHOPIFY ===== */
 
-.
+/* Boutons principaux Shopify */
+button,
+.button,
+.btn,
+.product-form__submit,
+.shopify-payment-button__button--unbranded {
+  border-radius: 14px;                 /* ajuster à l'arrondi du bouton (ex. 14px ou 9999px pour pill) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Retire l'outline carré et ajoute un halo arrondi accessible */
+button:focus, .button:focus, .btn:focus,
+.product-form__submit:focus,
+.shopify-payment-button__button--unbranded:focus,
+button:focus-visible, .button:focus-visible, .btn:focus-visible,
+.product-form__submit:focus-visible,
+.shopify-payment-button__button--unbranded:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(80, 70, 160, .35); /* halo arrondi ; adapter la couleur si besoin */
+  border-radius: 14px;
+}
