@@ -17,20 +17,14 @@
 .featured-collection .card--standard .card__inner,
 .collection .card--card,
 .collection .card--standard .card__inner {
-    /* Dégradé blanc-violet avec transparence */
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.8) 0%,
-            rgba(248, 249, 255, 0.7) 25%,
-            rgba(232, 234, 255, 0.6) 50%,
-            rgba(212, 212, 255, 0.5) 75%,
-            rgba(199, 179, 255, 0.4) 100%) !important;
+    /* Fond transparent pour voir directement les photos */
+    background: transparent !important;
 
     /* Bordures et ombres */
     border: 2px solid rgba(199, 179, 255, 0.3) !important;
     box-shadow:
         0 8px 32px rgba(199, 179, 255, 0.15),
-        0 4px 16px rgba(255, 255, 255, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+        0 4px 16px rgba(255, 255, 255, 0.1) !important;
 
     /* Transition douce */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -44,17 +38,10 @@
     transform: translateY(-8px) scale(1.02);
     box-shadow:
         0 16px 48px rgba(199, 179, 255, 0.25),
-        0 8px 24px rgba(255, 255, 255, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        0 8px 24px rgba(255, 255, 255, 0.15) !important;
 
-    /* Dégradé plus prononcé au survol */
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(240, 242, 255, 0.8) 20%,
-            rgba(224, 228, 255, 0.7) 40%,
-            rgba(208, 214, 255, 0.6) 60%,
-            rgba(192, 200, 255, 0.5) 80%,
-            rgba(179, 179, 255, 0.4) 100%) !important;
+    /* Fond transparent au survol aussi */
+    background: transparent !important;
 }
 
 /* Style des images dans les cartes */
@@ -68,26 +55,27 @@
 .featured-collection .card__content,
 .collection .card__content {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: transparent;
     border-radius: 0 0 18px 18px;
 }
 
 /* Style des titres de produits */
 .featured-collection .card__heading,
 .collection .card__heading {
-    color: #2d1b69 !important;
-    font-weight: 600;
-    font-size: 1.1rem;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Style des prix */
 .featured-collection .price,
 .collection .price {
-    color: #6b46c1 !important;
+    color: #ffffff !important;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Style des badges et étiquettes */
@@ -188,27 +176,10 @@
     }
 }
 
-/* Effet de brillance au survol */
+/* Effet de brillance au survol - DÉSACTIVÉ pour voir directement les photos */
 .featured-collection .card::before,
 .collection .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent);
-    transition: left 0.5s ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.featured-collection .card:hover::before,
-.collection .card:hover::before {
-    left: 100%;
+    display: none;
 }
 
 /* Style pour les cartes sans image */
