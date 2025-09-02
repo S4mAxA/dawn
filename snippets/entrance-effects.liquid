@@ -1,0 +1,190 @@
+{% comment %}
+  Snippet pour les effets d'entrée spectaculaires - WOW FACTOR
+  Ce snippet doit être inclus dans le layout principal (theme.liquid)
+{% endcomment %}
+
+<!-- Overlay de chargement avec spinner -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<!-- Particules d'entrée spectaculaires -->
+<div class="entrance-particles" id="entranceParticles">
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+  <div class="entrance-particle"></div>
+</div>
+
+<!-- Effet de distorsion d'entrée -->
+<div class="entrance-distortion" id="entranceDistortion"></div>
+
+<!-- Effet de vague d'entrée -->
+<div class="entrance-wave" id="entranceWave"></div>
+
+<!-- Particules flottantes en arrière-plan -->
+<div class="floating-particles" id="floatingParticles">
+  <div class="floating-particle"></div>
+  <div class="floating-particle"></div>
+  <div class="floating-particle"></div>
+  <div class="floating-particle"></div>
+</div>
+
+<!-- Script pour gérer les effets d'entrée -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Gestion de l'overlay de chargement
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+      // Masquer l'overlay après 3 secondes
+      setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+      }, 3000);
+    }
+
+    // Gestion des effets d'entrée
+    const entranceEffects = {
+      particles: document.getElementById('entranceParticles'),
+      distortion: document.getElementById('entranceDistortion'),
+      wave: document.getElementById('entranceWave'),
+      floating: document.getElementById('floatingParticles')
+    };
+
+    // Masquer les effets d'entrée après leur animation
+    if (entranceEffects.particles) {
+      setTimeout(() => {
+        entranceEffects.particles.style.display = 'none';
+      }, 3000);
+    }
+
+    if (entranceEffects.distortion) {
+      setTimeout(() => {
+        entranceEffects.distortion.style.display = 'none';
+      }, 2000);
+    }
+
+    if (entranceEffects.wave) {
+      setTimeout(() => {
+        entranceEffects.wave.style.display = 'none';
+      }, 2500);
+    }
+
+    // Gestion de la révélation au scroll
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+    // Effet de parallaxe d'entrée
+    const parallaxElements = document.querySelectorAll('.parallax-entrance');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      parallaxElements.forEach((element, index) => {
+        const speed = 0.1 + (index * 0.05);
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Animation des cartes avec effet de cascade
+    const cards = document.querySelectorAll('.collection-item-card, .featured-product-card, .product-item-card');
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${0.8 + (index * 0.2)}s`;
+    });
+
+    // Animation des boutons avec effet de rebond
+    const buttons = document.querySelectorAll('.button, .btn, .shopify-payment-button__button');
+    buttons.forEach((button, index) => {
+      button.style.animationDelay = `${1.5 + (index * 0.2)}s`;
+    });
+
+    // Effet de morphing pour les éléments spéciaux
+    const morphingElements = document.querySelectorAll('.morphing-entrance');
+    morphingElements.forEach((element, index) => {
+      element.style.animationDelay = `${1 + (index * 0.3)}s`;
+    });
+
+    // Gestion des performances
+    let ticking = false;
+    function updateParallax() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset;
+          parallaxElements.forEach((element, index) => {
+            const speed = 0.1 + (index * 0.05);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+
+    // Effet de pulsation pour les éléments importants
+    setInterval(() => {
+      const importantElements = document.querySelectorAll('.collection-item-card--hero, .featured-product-card');
+      importantElements.forEach(element => {
+        element.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          element.style.transform = 'scale(1)';
+        }, 200);
+      });
+    }, 5000);
+
+    // Gestion des préférences de mouvement réduit
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Désactiver toutes les animations
+      document.documentElement.style.setProperty('--transition-fast', '0.01ms');
+      document.documentElement.style.setProperty('--transition-normal', '0.01ms');
+      document.documentElement.style.setProperty('--transition-slow', '0.01ms');
+      
+      // Masquer les effets d'entrée
+      Object.values(entranceEffects).forEach(effect => {
+        if (effect) effect.style.display = 'none';
+      });
+      
+      // Supprimer les animations CSS
+      const animatedElements = document.querySelectorAll('[style*="animation"]');
+      animatedElements.forEach(element => {
+        element.style.animation = 'none';
+      });
+    }
+
+    // Console log pour confirmer le chargement
+    console.log('🎉 Effets d\'entrée spectaculaires chargés avec succès !');
+  });
+
+  // Gestion des erreurs
+  window.addEventListener('error', function(e) {
+    console.error('Erreur dans les effets d\'entrée:', e.error);
+  });
+
+  // Optimisation des performances
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      // Code non critique exécuté pendant les temps morts
+      const nonCriticalElements = document.querySelectorAll('.floating-particle');
+      nonCriticalElements.forEach(element => {
+        element.style.willChange = 'transform';
+      });
+    });
+  }
+</script>

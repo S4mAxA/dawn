@@ -1128,6 +1128,111 @@ button[type="submit"],
 }
 
 /* ========================================
+   FOND RUBAN ANIMÉ (STYLE ÉCRAN DE VEILLE WINDOWS)
+   ======================================== */
+
+/* Conteneur principal du ruban */
+.ribbon-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Ruban principal */
+.ribbon {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    var(--violet-600) 0%,
+    var(--violet-500) 25%,
+    var(--violet-400) 50%,
+    var(--violet-500) 75%,
+    var(--violet-600) 100%
+  );
+  animation: ribbonFloat 20s ease-in-out infinite;
+  opacity: 0.03;
+  filter: blur(40px);
+}
+
+/* Ruban secondaire */
+.ribbon-secondary {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(
+    -45deg,
+    var(--violet-400) 0%,
+    var(--violet-300) 25%,
+    var(--violet-400) 50%,
+    var(--violet-300) 75%,
+    var(--violet-400) 100%
+  );
+  animation: ribbonFloat 25s ease-in-out infinite reverse;
+  opacity: 0.02;
+  filter: blur(60px);
+  top: 25%;
+  left: 25%;
+}
+
+/* Ruban tertiaire */
+.ribbon-tertiary {
+  position: absolute;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(
+    90deg,
+    var(--violet-500) 0%,
+    var(--violet-400) 33%,
+    var(--violet-300) 66%,
+    var(--violet-500) 100%
+  );
+  animation: ribbonFloat 30s ease-in-out infinite;
+  opacity: 0.015;
+  filter: blur(80px);
+  top: 10%;
+  left: 10%;
+}
+
+/* Animation de flottement du ruban */
+@keyframes ribbonFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-40%, -60%) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-60%, -40%) rotate(180deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg) scale(1.05);
+  }
+}
+
+/* Effet de parallaxe au scroll */
+.ribbon-background {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 749px) {
+  .ribbon,
+  .ribbon-secondary,
+  .ribbon-tertiary {
+    filter: blur(20px);
+    opacity: 0.02;
+  }
+}
+
+/* ========================================
    UTILITAIRES
    ======================================== */
 
@@ -1225,4 +1330,592 @@ button[type="submit"],
 
 .mt-4 {
   margin-top: 2rem;
+}
+
+/* ========================================
+          EFFETS D'ENTRÉE SPECTACULAIRES - WOW FACTOR
+          ======================================== */
+
+/* Animation d'entrée principale du site */
+@keyframes siteEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-2deg);
+    filter: blur(20px) brightness(0.3);
+  }
+  20% {
+    opacity: 0.3;
+    transform: scale(0.9) rotate(-1deg);
+    filter: blur(15px) brightness(0.5);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(1.05) rotate(0.5deg);
+    filter: blur(10px) brightness(0.8);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.02) rotate(0.2deg);
+    filter: blur(5px) brightness(1);
+  }
+  80% {
+    opacity: 0.95;
+    transform: scale(1.01) rotate(0deg);
+    filter: blur(2px) brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+/* Animation d'entrée des éléments principaux */
+@keyframes heroEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.5);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-20px) scale(1.1);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Animation des cartes avec effet de cascade */
+@keyframes cardCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8) rotateX(15deg);
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1.05) rotateX(5deg);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+/* Animation des boutons avec effet de rebond */
+@keyframes buttonBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animation des particules d'entrée */
+@keyframes entranceParticles {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+/* Animation de l'effet de distorsion d'entrée */
+@keyframes entranceDistortion {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+    transform: scale(0.8);
+  }
+  50% {
+    clip-path: circle(70% at 50% 50%);
+    transform: scale(1.1);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+    transform: scale(1);
+  }
+}
+
+/* Animation de l'effet de vague d'entrée */
+@keyframes entranceWave {
+  0% {
+    transform: translateX(-100%) scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%) scaleY(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scaleY(0);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+          PARTICULES D'ENTRÉE SPECTACULAIRES
+          ======================================== */
+.entrance-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.entrance-particle {
+  position: absolute;
+  background: radial-gradient(circle, var(--violet-400) 0%, var(--violet-600) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: entranceParticles 3s ease-out forwards;
+}
+
+.entrance-particle:nth-child(1) {
+  width: 8px;
+  height: 8px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.entrance-particle:nth-child(2) {
+  width: 12px;
+  height: 12px;
+  top: 30%;
+  right: 15%;
+  animation-delay: 0.2s;
+}
+
+.entrance-particle:nth-child(3) {
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 20%;
+  animation-delay: 0.4s;
+}
+
+.entrance-particle:nth-child(4) {
+  width: 10px;
+  height: 10px;
+  top: 60%;
+  right: 25%;
+  animation-delay: 0.6s;
+}
+
+.entrance-particle:nth-child(5) {
+  width: 14px;
+  height: 14px;
+  top: 80%;
+  left: 30%;
+  animation-delay: 0.8s;
+}
+
+.entrance-particle:nth-child(6) {
+  width: 9px;
+  height: 9px;
+  top: 40%;
+  right: 35%;
+  animation-delay: 1s;
+}
+
+.entrance-particle:nth-child(7) {
+  width: 11px;
+  height: 11px;
+  top: 70%;
+  left: 40%;
+  animation-delay: 1.2s;
+}
+
+.entrance-particle:nth-child(8) {
+  width: 7px;
+  height: 7px;
+  top: 90%;
+  right: 45%;
+  animation-delay: 1.4s;
+}
+
+/* ========================================
+          EFFET DE DISTORSION D'ENTRÉE
+          ======================================== */
+.entrance-distortion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--violet-600), var(--violet-400));
+  opacity: 0.1;
+  animation: entranceDistortion 2s ease-out forwards;
+}
+
+/* ========================================
+          EFFET DE VAGUE D'ENTRÉE
+          ======================================== */
+.entrance-wave {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--violet-300), transparent);
+  opacity: 0.3;
+  animation: entranceWave 2.5s ease-out forwards;
+}
+
+/* ========================================
+          ANIMATIONS D'ENTRÉE DES ÉLÉMENTS
+          ======================================== */
+body {
+  animation: siteEntrance 2.5s ease-out forwards;
+}
+
+.hero-content {
+  animation: heroEntrance 1.8s ease-out 0.5s both;
+}
+
+.collection-item-card {
+  animation: cardCascade 1.2s ease-out both;
+}
+
+.collection-item-card:nth-child(1) { animation-delay: 0.8s; }
+.collection-item-card:nth-child(2) { animation-delay: 1s; }
+.collection-item-card:nth-child(3) { animation-delay: 1.2s; }
+.collection-item-card:nth-child(4) { animation-delay: 1.4s; }
+.collection-item-card:nth-child(5) { animation-delay: 1.6s; }
+.collection-item-card:nth-child(6) { animation-delay: 1.8s; }
+
+.featured-product-card,
+.product-item-card {
+  animation: cardCascade 1.2s ease-out both;
+}
+
+.featured-product-card:nth-child(1),
+.product-item-card:nth-child(1) { animation-delay: 1s; }
+.featured-product-card:nth-child(2),
+.product-item-card:nth-child(2) { animation-delay: 1.2s; }
+.featured-product-card:nth-child(3),
+.product-item-card:nth-child(3) { animation-delay: 1.4s; }
+.featured-product-card:nth-child(4),
+.product-item-card:nth-child(4) { animation-delay: 1.6s; }
+
+.button, .shopify-payment-button__button, .button--primary, button[type="submit"], .btn, .btn--primary {
+  animation: buttonBounce 1s ease-out both;
+}
+
+.button:nth-child(1), .btn:nth-child(1) { animation-delay: 1.5s; }
+.button:nth-child(2), .btn:nth-child(2) { animation-delay: 1.7s; }
+.button:nth-child(3), .btn:nth-child(3) { animation-delay: 1.9s; }
+
+/* ========================================
+          EFFETS DE LUMIÈRE ET GLOW
+          ======================================== */
+@keyframes entranceGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    filter: brightness(0.8);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+    filter: brightness(1.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    filter: brightness(1);
+  }
+}
+
+.collection-item-card,
+.featured-product-card,
+.product-item-card {
+  animation: entranceGlow 3s ease-in-out 2s infinite;
+}
+
+/* ========================================
+          EFFET DE TEXTE D'ENTRÉE
+          ======================================== */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.collection-item-card__title,
+.collection-item-card__description,
+.featured-product-card__title,
+.featured-product-card__price,
+.product-item-card__title,
+.product-item-card__price {
+  animation: textReveal 1s ease-out both;
+}
+
+.collection-item-card__title { animation-delay: 1.2s; }
+.collection-item-card__description { animation-delay: 1.4s; }
+.featured-product-card__title { animation-delay: 1.6s; }
+.featured-product-card__price { animation-delay: 1.8s; }
+.product-item-card__title { animation-delay: 2s; }
+.product-item-card__price { animation-delay: 2.2s; }
+
+/* ========================================
+          EFFET DE FOND D'ENTRÉE
+          ======================================== */
+@keyframes backgroundEntrance {
+  0% {
+    background: rgba(15, 15, 18, 0);
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    background: var(--bg);
+    backdrop-filter: blur(20px);
+  }
+}
+
+body {
+  animation: backgroundEntrance 3s ease-out forwards, siteEntrance 2.5s ease-out forwards;
+}
+
+/* ========================================
+          EFFET DE SCROLL SMOOTH D'ENTRÉE
+          ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+          RESPECT DES PRÉFÉRENCES DE MOUVEMENT
+          ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .entrance-particles,
+  .entrance-distortion,
+  .entrance-wave {
+    display: none !important;
+  }
+  
+  body,
+  .hero-content,
+  .collection-item-card,
+  .featured-product-card,
+  .product-item-card,
+  .button,
+  .btn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ========================================
+          OPTIMISATION DES PERFORMANCES
+          ======================================== */
+.entrance-particles,
+.entrance-distortion,
+.entrance-wave {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.collection-item-card,
+.featured-product-card,
+.product-item-card {
+  will-change: transform, opacity, box-shadow;
+  transform: translateZ(0);
+}
+
+/* ========================================
+          EFFET DE CHARGEMENT PROGRESSIF
+          ======================================== */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 1s ease-out 3s forwards;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(139, 92, 246, 0.3);
+  border-top: 4px solid var(--violet-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ========================================
+          EFFET DE RÉVÉLATION PROGRESSIVE
+          ======================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+          EFFET DE PARALLAXE D'ENTRÉE
+          ======================================== */
+.parallax-entrance {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ========================================
+          EFFET DE MORPHING D'ENTRÉE
+          ======================================== */
+@keyframes morphingEntrance {
+  0% {
+    border-radius: 50%;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    border-radius: 25%;
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    border-radius: var(--radius-lg);
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.morphing-entrance {
+  animation: morphingEntrance 2s ease-out forwards;
+}
+
+/* ========================================
+          EFFET DE PARTICULES FLOTTANTES
+          ======================================== */
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-particle {
+  position: absolute;
+  background: radial-gradient(circle, var(--violet-300) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+.floating-particle:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.floating-particle:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  top: 30%;
+  right: 25%;
+  animation-delay: 2s;
+}
+
+.floating-particle:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  top: 50%;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+.floating-particle:nth-child(4) {
+  width: 5px;
+  height: 5px;
+  top: 70%;
+  right: 35%;
+  animation-delay: 6s;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-15px) translateX(15px);
+    opacity: 1;
+  }
 }

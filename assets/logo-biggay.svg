@@ -1,0 +1,110 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dégradé métallique principal -->
+    <linearGradient id="metallicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E0E0;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#F5F5F5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D0D0D0;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#B0B0B0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#909090;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dégradé violet liquide -->
+    <linearGradient id="violetLiquid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6D28D9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dégradé violet brillant -->
+    <linearGradient id="violetShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtre de distorsion liquide -->
+    <filter id="liquidDistortion">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      <feDisplacementMap in="SourceGraphic" scale="2"/>
+    </filter>
+    
+    <!-- Filtre de brillance métallique -->
+    <filter id="metallicShine">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.3"/>
+      <feSpecularLighting result="specOut" in="SourceAlpha" specularConstant="1.5" specularExponent="20" lighting-color="#FFFFFF">
+        <fePointLight x="50" y="75" z="200"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+      <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+  
+  <!-- Fond du logo avec effet de distorsion -->
+  <rect x="0" y="0" width="200" height="80" rx="15" fill="url(#metallicGradient)" opacity="0.1"/>
+  
+  <!-- Lettre B avec effet métallique -->
+  <path d="M15 15 L15 65 L35 65 Q45 65 50 60 Q55 55 55 50 Q55 45 50 40 Q45 35 35 35 L25 35 L25 25 L35 25 Q45 25 50 20 Q55 15 55 10 Q55 5 50 0 Q45 -5 35 -5 L15 -5 Z" 
+        fill="url(#metallicGradient)" 
+        filter="url(#metallicShine)"
+        stroke="#000000" 
+        stroke-width="1"/>
+  
+  <!-- Lettre I avec effet métallique -->
+  <path d="M65 15 L65 65 M60 15 L70 15 M60 65 L70 65" 
+        stroke="url(#metallicGradient)" 
+        stroke-width="8" 
+        stroke-linecap="round"
+        filter="url(#metallicShine)"/>
+  
+  <!-- Lettre G avec effet métallique -->
+  <path d="M80 15 Q90 15 95 20 Q100 25 100 35 Q100 45 95 50 Q90 55 80 55 L85 55 Q90 55 92 52 Q94 49 94 45 Q94 41 92 38 Q90 35 85 35 L80 35 Q75 35 72 38 Q69 41 69 45 Q69 49 72 52 Q75 55 80 55" 
+        fill="url(#metallicGradient)" 
+        filter="url(#metallicShine)"
+        stroke="#000000" 
+        stroke-width="1"/>
+  
+  <!-- Lettre G avec effet métallique (suite) -->
+  <path d="M80 15 Q70 15 65 20 Q60 25 60 35 Q60 45 65 50 Q70 55 80 55" 
+        fill="none" 
+        stroke="url(#metallicGradient)" 
+        stroke-width="8"
+        filter="url(#metallicShine)"/>
+  
+  <!-- Lettre A avec effet métallique -->
+  <path d="M105 65 L115 15 L125 65 M110 45 L120 45" 
+        stroke="url(#metallicGradient)" 
+        stroke-width="8" 
+        stroke-linecap="round"
+        filter="url(#metallicShine)"/>
+  
+  <!-- Lettre Y avec effet métallique -->
+  <path d="M130 15 L140 40 L150 15 M135 65 L145 65 M130 15 L150 15" 
+        stroke="url(#metallicGradient)" 
+        stroke-width="8" 
+        stroke-linecap="round"
+        filter="url(#metallicShine)"/>
+  
+  <!-- Effets de liquide violet -->
+  <path d="M10 70 Q20 75 30 70 Q40 75 50 70 Q60 75 70 70 Q80 75 90 70 Q100 75 110 70 Q120 75 130 70 Q140 75 150 70 Q160 75 170 70 Q180 75 190 70" 
+        fill="none" 
+        stroke="url(#violetLiquid)" 
+        stroke-width="3" 
+        opacity="0.8"
+        filter="url(#liquidDistortion)"/>
+  
+  <!-- Gouttes de liquide violet -->
+  <circle cx="25" cy="72" r="2" fill="url(#violetShine)" opacity="0.9"/>
+  <circle cx="55" cy="72" r="1.5" fill="url(#violetShine)" opacity="0.8"/>
+  <circle cx="85" cy="72" r="2.5" fill="url(#violetShine)" opacity="0.9"/>
+  <circle cx="115" cy="72" r="1.8" fill="url(#violetShine)" opacity="0.8"/>
+  <circle cx="145" cy="72" r="2.2" fill="url(#violetShine)" opacity="0.9"/>
+  <circle cx="175" cy="72" r="1.6" fill="url(#violetShine)" opacity="0.8"/>
+  
+  <!-- Effets de brillance et reflets -->
+  <ellipse cx="100" cy="40" rx="80" ry="20" fill="url(#violetLiquid)" opacity="0.1"/>
+  <ellipse cx="100" cy="35" rx="60" ry="15" fill="url(#violetShine)" opacity="0.15"/>
+  
+  <!-- Contour noir fin pour la définition -->
+  <rect x="0" y="0" width="200" height="80" rx="15" fill="none" stroke="#000000" stroke-width="0.5" opacity="0.3"/>
+</svg>

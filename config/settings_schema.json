@@ -161,6 +161,57 @@
     ]
   },
   {
+    "name": "Fond ruban animé",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Configuration du fond ruban"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_ribbon",
+        "label": "Activer le fond ruban animé",
+        "default": true,
+        "info": "Affiche un fond ruban animé style écran de veille Windows"
+      },
+      {
+        "type": "range",
+        "id": "ribbon_opacity",
+        "min": 0.005,
+        "max": 0.1,
+        "step": 0.005,
+        "label": "Opacité du ruban",
+        "default": 0.03,
+        "info": "Contrôle la visibilité du ruban (0.005 = très subtil, 0.1 = visible)"
+      },
+      {
+        "type": "range",
+        "id": "ribbon_blur",
+        "min": 20,
+        "max": 100,
+        "step": 10,
+        "label": "Flou du ruban",
+        "unit": "px",
+        "default": 40,
+        "info": "Contrôle le niveau de flou des rubans"
+      },
+      {
+        "type": "checkbox",
+        "id": "ribbon_mouse_follow",
+        "label": "Ruban suit la souris",
+        "default": true,
+        "info": "Le ruban réagit aux mouvements de la souris"
+      },
+      {
+        "type": "checkbox",
+        "id": "ribbon_scroll_parallax",
+        "label": "Effet parallaxe au scroll",
+        "default": true,
+        "info": "Le ruban bouge légèrement lors du défilement"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {

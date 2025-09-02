@@ -256,6 +256,7 @@
     {% endstyle %}
 
     {% render 'custom-colors' %}
+    {% render 'ribbon-background' %}
     {{ 'dawn-custom-theme.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -301,6 +302,12 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    {% render 'entrance-effects' %}
+    {% render 'custom-colors' %}
+    {% render 'ribbon-background' %}
+    {{ 'dawn-custom-theme.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
