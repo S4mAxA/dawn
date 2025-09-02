@@ -62,7 +62,7 @@
 /* Style des titres de produits */
 .featured-collection .card__heading,
 .collection .card__heading {
-    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #433F68 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -75,7 +75,7 @@
 /* Style des prix */
 .featured-collection .price,
 .collection .price {
-    background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #433F68 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
