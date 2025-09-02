@@ -103,7 +103,7 @@
 .collection .card__badge {
     background: #433F68 !important;
     color: white !important;
-    border-radius: 12px !important;
+    border-radius: 40px !important;
     padding: 0.5rem 1rem !important;
     font-weight: 600 !important;
     box-shadow: 0 4px 12px rgba(67, 63, 104, 0.3) !important;
@@ -114,7 +114,7 @@
 .collection .quick-add__submit {
     background: linear-gradient(135deg, #433F68 0%, #ffffff 100%) !important;
     border: none !important;
-    border-radius: 12px !important;
+    border-radius: 40px !important;
     color: #433F68 !important;
     font-weight: 600 !important;
     padding: 0.75rem 1.5rem !important;

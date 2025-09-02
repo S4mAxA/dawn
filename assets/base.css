@@ -3517,29 +3517,103 @@ details-disclosure>details {
 
 /* ===== STYLES PERSONNALISÉS POUR LES BOUTONS SHOPIFY ===== */
 
-/* Boutons principaux Shopify */
+/* TOUS LES BOUTONS SHOPIFY - 40px border-radius */
 button,
 .button,
 .btn,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
 .product-form__submit,
-.shopify-payment-button__button--unbranded {
-  border-radius: 40px;                 /* coins arrondis (40px) */
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button button,
+.customer button,
+.pagination__item,
+.facets__submit,
+.quick-add__submit,
+.cart__submit,
+.cart-notification__close,
+.header__search-form-submit,
+.predictive-search__submit,
+.newsletter__submit,
+.contact__submit,
+.localization-form__submit,
+.share-button,
+.cart-drawer__close,
+.modal__close-button,
+.search__button,
+.product__pickup-availabilities-button,
+.product__media-toggle,
+.card__media button,
+.slideshow__controls button,
+.slider-mobile-gutter button,
+.collection-hero__button {
+  border-radius: 40px !important;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Retire l'outline carré et ajoute un halo arrondi accessible */
+/* Retire l'outline carré et ajoute un halo arrondi accessible pour TOUS les boutons */
 button:focus,
 .button:focus,
 .btn:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
 .product-form__submit:focus,
 .shopify-payment-button__button--unbranded:focus,
+.shopify-payment-button button:focus,
+.customer button:focus,
+.pagination__item:focus,
+.facets__submit:focus,
+.quick-add__submit:focus,
+.cart__submit:focus,
+.cart-notification__close:focus,
+.header__search-form-submit:focus,
+.predictive-search__submit:focus,
+.newsletter__submit:focus,
+.contact__submit:focus,
+.localization-form__submit:focus,
+.share-button:focus,
+.cart-drawer__close:focus,
+.modal__close-button:focus,
+.search__button:focus,
+.product__pickup-availabilities-button:focus,
+.product__media-toggle:focus,
+.card__media button:focus,
+.slideshow__controls button:focus,
+.slider-mobile-gutter button:focus,
+.collection-hero__button:focus,
 button:focus-visible,
 .button:focus-visible,
 .btn:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+input[type="reset"]:focus-visible,
 .product-form__submit:focus-visible,
-.shopify-payment-button__button--unbranded:focus-visible {
+.shopify-payment-button__button--unbranded:focus-visible,
+.shopify-payment-button button:focus-visible,
+.customer button:focus-visible,
+.pagination__item:focus-visible,
+.facets__submit:focus-visible,
+.quick-add__submit:focus-visible,
+.cart__submit:focus-visible,
+.cart-notification__close:focus-visible,
+.header__search-form-submit:focus-visible,
+.predictive-search__submit:focus-visible,
+.newsletter__submit:focus-visible,
+.contact__submit:focus-visible,
+.localization-form__submit:focus-visible,
+.share-button:focus-visible,
+.cart-drawer__close:focus-visible,
+.modal__close-button:focus-visible,
+.search__button:focus-visible,
+.product__pickup-availabilities-button:focus-visible,
+.product__media-toggle:focus-visible,
+.card__media button:focus-visible,
+.slideshow__controls button:focus-visible,
+.slider-mobile-gutter button:focus-visible,
+.collection-hero__button:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(80, 70, 160, .35);
-  /* halo arrondi ; adapter la couleur si besoin */
-  border-radius: 40px;
+  box-shadow: 0 0 0 3px rgba(80, 70, 160, .35) !important;
+  border-radius: 40px !important;
 }
